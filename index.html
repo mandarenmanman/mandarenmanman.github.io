@@ -69,13 +69,24 @@ map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
 //map.setTilt(73);
 
 
-function addMarker(point) {
-	var myIcon = new BMapGL.Icon("fox.gif", new BMapGL.Size(300,157));
+function addMarker(point,title) {
+	var myIcon = new BMapGL.Icon("/fox.gif", new BMapGL.Size(300,157));
     var marker = new BMapGL.Marker(point,{icon:myIcon});
+    var label = new BMapGL.Label(title,{offset:new BMapGL.Size(20,-10)});
+	marker.setLabel(label);
     map.addOverlay(marker);
 }
 
 
-var point =  new BMapGL.Point(8.140776, 16.854144);
-addMarker(point);
+var point =  new BMapGL.Point(108.939566,34.337953);
+addMarker(point,"路过西安很多次！");
+
+
+var point =  new BMapGL.Point(107.214042,33.369883);
+addMarker(point,"我家！1996-");
+
+
+var point =  new BMapGL.Point(119.300006,26.087634);
+addMarker(point,"我再这里工作！2014-today");
+
 </script>
