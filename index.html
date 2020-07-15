@@ -59,7 +59,6 @@
 
 </html>
 <script type="text/javascript">
-
 // GL版命名空间为BMapGL
 // 按住鼠标右键，修改倾斜角和角度
 var map = new BMapGL.Map("allmap"); // 创建Map实例
@@ -69,53 +68,47 @@ map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
 //map.setTilt(73);
 
 
-function addMarker(point,title) {
-	var myIcon = new BMapGL.Icon("/fox.gif", new BMapGL.Size(300,157));
-    var marker = new BMapGL.Marker(point,{icon:myIcon});
-    var label = new BMapGL.Label(title,{offset:new BMapGL.Size(20,-10)});
-	marker.setLabel(label);
+function addMarker(point, title) {
+    var myIcon = new BMapGL.Icon("/fox.gif", new BMapGL.Size(300, 157));
+    var marker = new BMapGL.Marker(point, { icon: myIcon });
+    var label = new BMapGL.Label(title, { offset: new BMapGL.Size(20, -10) });
+    marker.setLabel(label);
     map.addOverlay(marker);
 }
 
+var point = new BMapGL.Point(107.214042, 33.369883);
+addMarker(point, "我家！1996-");
 
-var point =  new BMapGL.Point(108.939566,34.337953);
-addMarker(point,"路过西安很多次！");
+var point = new BMapGL.Point(107.198133, 33.419829);
+addMarker(point, "在这里上完幼儿园，小学，初中！2003.09");
 
+var point = new BMapGL.Point(107.344939, 33.157499);
+addMarker(point, "在这里上高中！2012.09");
 
-var point =  new BMapGL.Point(107.214042,33.369883);
-addMarker(point,"我家！1996-");
+var point = new BMapGL.Point(108.939566, 34.337953);
+addMarker(point, "路过西安很多次！");
 
+var point = new BMapGL.Point(119.300006, 26.087634);
+addMarker(point, "我在这里工作！2014-today");
 
-var point =  new BMapGL.Point(119.300006,26.087634);
-addMarker(point,"我在这里工作！2014-today");
+var point = new BMapGL.Point(118.748087, 32.117688);
+addMarker(point, "去南京见客户，去中山陵！2017.05");
 
-var point =  new BMapGL.Point(118.092683,24.497134);
-addMarker(point,"和兄弟一起去鼓浪屿！2020.05");
+var point = new BMapGL.Point(111.292008, 30.695095);
+addMarker(point, "去看三峡大坝！2017.05");
 
-var point =  new BMapGL.Point(114.309739,30.598158);
-addMarker(point,"去武汉玩，第一次坐过山车，去武汉出差！2018.05");
+var point = new BMapGL.Point(114.309739, 30.598158);
+addMarker(point, "去武汉玩，第一次坐过山车，去武汉出差！2018.05");
 
-var point =  new BMapGL.Point(118.748087,32.117688);
-addMarker(point,"去南京见客户，去中山陵！2017.05");
+var point = new BMapGL.Point(103.873298, 1.365939);
+addMarker(point, "第一次出国，新加坡！2018.05");
 
-var point =  new BMapGL.Point(111.292008,30.695095);
-addMarker(point,"去看三峡大坝！2017.05");
+var point = new BMapGL.Point(101.661023, 3.19813);
+addMarker(point, "第一次出国出差，马来西亚！2018.05");
 
-var point =  new BMapGL.Point(103.873298,1.365939);
-addMarker(point,"第一次出国，新加坡！2018.05");
+var point = new BMapGL.Point(118.092683, 24.497134);
+addMarker(point, "和兄弟一起去鼓浪屿！2020.05");
 
-var point =  new BMapGL.Point(101.661023,3.19813);
-addMarker(point,"第一次出国出差，马来西亚！2018.05");
-
-var point =  new BMapGL.Point(118.689446,24.888994);
-addMarker(point,"第一次见某傻子，后面又见了很多很多次！2020.06");
-
-
-var point =  new BMapGL.Point(107.198133,33.419829);
-addMarker(point,"在这里上完幼儿园，小学，初中！2003.09");
-
-var point =  new BMapGL.Point(107.344939,33.157499);
-addMarker(point,"在这里上高中！2012.09");
-
-
+var point = new BMapGL.Point(118.689446, 24.888994);
+addMarker(point, "第一次坐摩天轮，打卡历史书中老子像！2020.06");
 </script>
