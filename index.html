@@ -1,24 +1,81 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-	<style type="text/css">
-	body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
-	</style>
-	<script type="text/javascript" src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=UoliwIL1AqwZ3FUICrVkKjqSZtf7Ifzn"></script>
-	<title>设置地图3D视角</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+    body,
+    html,
+    #allmap {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        margin: 0;
+        font-family: "微软雅黑";
+    }
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?type=webgl&v=1.0&ak=UoliwIL1AqwZ3FUICrVkKjqSZtf7Ifzn"></script>
+    <style>
+        .title {
+                display: block;
+                text-decoration: none;
+                text-align: center;
+                
+                margin: 20px 0px;
+                background-image: -webkit-linear-gradient(left,#3498db,#f47920 10%,#d71345 20%,#f7acbc 30%,#ffd400 40%,#3498db 50%,#f47920 60%,#d71345 70%,#f7acbc 80%,#ffd400 90%,#3498db);
+                color: transparent;
+                -webkit-background-clip: text;
+                background-size: 200% 100%;
+                -webkit-animation: slide 2s infinite linear;
+                animation: slide 5s infinite linear;
+                font-size: 40px;
+                
+            }
+            @keyframes slide {
+                0%  {
+                  background-position: 0 0;
+                }
+                100% {
+                  background-position: -100% 0;
+                }
+            }
+           .headcss{
+           	line-height: 1.5;
+           	background-color:#FFFFFF;
+           }
+        </style>
+    <title>蛮大人的小破站</title>
 </head>
+
 <body>
-	<div id="allmap"></div>
+    <div class="headcss">
+        <p class="title">
+            穷则须弥芥子，富则星辰大海
+        </p>
+    </div>
+    <div id="allmap"></div>
 </body>
+
 </html>
 <script type="text/javascript">
-    // GL版命名空间为BMapGL
-    // 按住鼠标右键，修改倾斜角和角度
-	var map = new BMapGL.Map("allmap");    // 创建Map实例
-	map.centerAndZoom(new BMapGL.Point(116.280190, 40.049191), 19);  // 初始化地图,设置中心点坐标和地图级别
-	map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
-	map.setHeading(64.5);
-	map.setTilt(73);
+
+// GL版命名空间为BMapGL
+// 按住鼠标右键，修改倾斜角和角度
+var map = new BMapGL.Map("allmap"); // 创建Map实例
+map.centerAndZoom(new BMapGL.Point(8.140776, 16.854144), 1); // 初始化地图,设置中心点坐标和地图级别
+map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+//map.setHeading(64.5);
+//map.setTilt(73);
+
+
+function addMarker(point) {
+	var myIcon = new BMapGL.Icon("fox.gif", new BMapGL.Size(300,157));
+    var marker = new BMapGL.Marker(point,{icon:myIcon});
+    map.addOverlay(marker);
+}
+
+
+var point =  new BMapGL.Point(8.140776, 16.854144);
+addMarker(point);
 </script>
